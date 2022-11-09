@@ -26,12 +26,8 @@ export const InventoryManage = (props) => {
 
   const navigate = useNavigate();
 
-          //   requestServer("post", process.env.REACT_APP_API_ENDPOINT +ROUTE_PATHS.FETCH_PROPERTIES, {}, null).then(
-
-
     useEffect(() => {
-        requestServer("post", "http://localhost:5600/getrecord", {}, null).then(
-
+        requestServer("post", process.env.REACT_APP_API_ENDPOINT +ROUTE_PATHS.FETCH_PROPERTIES, {}, null).then(
           (res) => {
             console.log("inside get records", res);
             setProperty(res.data.records);

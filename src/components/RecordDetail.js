@@ -5,11 +5,13 @@ import axios from 'axios';
 import { FormControl ,InputLabel, Input,FormHelperText} from '@mui/material';
 import { TextField ,Box} from '@mui/material'
 import {useLocation} from 'react-router-dom';
+import ROUTE_PATHS from "../properties/routePaths";
+
 const RecordDetail= ({ item }) => {
-  const location = useLocation();
-    
-  const [singleProperty, setSingleProperty] = useState([{}]);
-  const [rec,setRec] =useState([{}])
+
+    const location = useLocation();
+    const [singleProperty, setSingleProperty] = useState([{}]);
+    const [rec,setRec] =useState([{}])
     const {detailpage} = useParams()
     const navigate =useNavigate();
     const [showData,setShowData] = useState(false);
@@ -21,24 +23,21 @@ const RecordDetail= ({ item }) => {
       console.log('location name',location.state.name)
       // setSingleProperty(location.state.rec)
       // setShowData(true)
-      // setSingle(localStorage.getItem("selectedCard"));
-      // console.log('reco id',localStorage.getItem("selectedCard"))
-
-        requestServer("post", "http://localhost:5600/recordId", {}, null).then(
+      // setSingle(localStorage.getItem("selectedCard")); -- we store values using local storage
+      
+        requestServer("post", process.env.REACT_APP_API_ENDPOINT +ROUTE_PATHS.FETCH_SINGLE_PROPERTIES, {}, null).then(
           (res) => {
-            console.log("inside get records", res.data.records[0].CD_Project__c);
             setSingleProperty(res.data.records);
-            // setShowData(true);
+            setShowData(true);
           
           }
 
         );
         // axios.post("http://localhost:5600/recordId?searchId="+localStorage.getItem("selectedCard")) 
         
-        axios.post("http://localhost:5600/recordId?searchId="+location.state.name) 
+        axios.post(process.env.REACT_APP_API_ENDPOINT +ROUTE_PATHS.FETCH_SINGLE_PROPERTIES+"?searchId="+location.state.name) 
           .then((res)=>{
                 console.log('inside rec ', res)
-                
             })
        
         

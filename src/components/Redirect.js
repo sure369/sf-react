@@ -4,6 +4,8 @@ import {requestServer} from '../utility/HttpReq';
 import {useNavigate} from "react-router-dom";
 
 
+import ROUTE_PATHS from "../properties/routePaths";
+
 export const Redirect = () => {
 
   
@@ -25,8 +27,8 @@ export const Redirect = () => {
       console.log('code url', codeurl);
 
       if(codeurl!== undefined){
-        
-        axios.post("http://localhost:5600/connection?code="+codeurl)
+        // axios.post("http://localhost:5600/connection?code="+codeurl)
+        axios.post(process.env.REACT_APP_API_ENDPOINT +ROUTE_PATHS.LOGIN_PATH+"code="+codeurl) 
         .then(function(response) {
           console.log("test")
               console.log('log response ',response)
@@ -36,7 +38,8 @@ export const Redirect = () => {
               console.log('request',response.request.response);
 
               //get userDetails
-              requestServer('post','http://localhost:5600/userdetails',{},null)               
+              //  requestServer('post','http://localhost:5600/userdetails',{},null)   
+              requestServer('post',process.env.REACT_APP_API_ENDPOINT +ROUTE_PATHS.LOGIN_PATH,{},null)               
               .then((res)=>{
                 console.log('below req server',res)
                 setUserName(res.data)
@@ -45,7 +48,8 @@ export const Redirect = () => {
               })
 
               console.log('userName',userName)
-            axios.post("http://localhost:5600/userdetails")
+              // axios.post("http://localhost:5600/userdetails")
+            axios.post(process.env.REACT_APP_API_ENDPOINT +ROUTE_PATHS.LOGIN_PATH)
             .then((response)=>{
               console.log('res user',response)
             })
