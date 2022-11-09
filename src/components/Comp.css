@@ -1,0 +1,76 @@
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background-color: lightblue;
+    color: rgb(178, 35, 35);
+  }
+  
+.navLinks{
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+     list-style: none;
+  }
+  
+.container{
+  width: 100%;
+  max-width: 480px;
+  margin: auto;
+  /* margin-left: 30%; */
+}
+.accordion{
+  width :100%;
+  max-width: 540px;
+  margin: 18px auto;
+  color: white;
+}
+.accordionHeading{
+  background-color: #3f475d;
+  padding: 14px 0;
+}
+.accordionHeading .container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.accordionHeading p{
+  letter-spacing: 1.2px;
+  font-weight: 600;
+}
+.accordionHeading span{
+  cursor:pointer;
+}
+.accordionContent{
+  background: #383a7f;
+  width :100%;
+  max-width: 540px;
+  margin: 18px auto;
+  /* height: 0;
+  opacity: 0; */
+  display: flex;
+  overflow: hidden;
+  transition: all 600ms ease-in-out;
+}
+
+.form-box {
+  box-sizing: border-box;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: hsl(0, 0%, 100%);
+  /* border: 1px solid hsl(0, 0%, 90%); */
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  gap: 1rem;
+  font-weight: bold;
+
+}
+
+.form-box label {
+  text-decoration:dotted
+}
+
+
