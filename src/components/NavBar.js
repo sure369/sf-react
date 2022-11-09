@@ -9,7 +9,7 @@ function NavBar() {
         <CssBaseline/>
             <Toolbar>
                 <Typography variant="h5" >
-                    Luxhabitat
+                    CloudDesk
                 </Typography>
                 <div >
                    <NavLink to="/login">
