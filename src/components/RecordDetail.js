@@ -7,6 +7,8 @@ import { TextField ,Box} from '@mui/material'
 import {useLocation} from 'react-router-dom';
 import ROUTE_PATHS from "../properties/routePaths";
 
+const { REACT_APP_API_ENDPOINT } = process.env;
+
 const RecordDetail= ({ item }) => {
 
     const location = useLocation();
@@ -25,7 +27,7 @@ const RecordDetail= ({ item }) => {
       // setShowData(true)
       // setSingle(localStorage.getItem("selectedCard")); -- we store values using local storage
       
-        requestServer("post", process.env.REACT_APP_API_ENDPOINT +ROUTE_PATHS.FETCH_SINGLE_PROPERTIES, {}, null).then(
+        requestServer("post", REACT_APP_API_ENDPOINT +ROUTE_PATHS.FETCH_SINGLE_PROPERTIES, {}, null).then(
           (res) => {
             setSingleProperty(res.data.records);
             setShowData(true);
@@ -35,7 +37,7 @@ const RecordDetail= ({ item }) => {
         );
         // axios.post("http://localhost:5600/recordId?searchId="+localStorage.getItem("selectedCard")) 
         
-        axios.post(process.env.REACT_APP_API_ENDPOINT +ROUTE_PATHS.FETCH_SINGLE_PROPERTIES+"?searchId="+location.state.name) 
+        axios.post(REACT_APP_API_ENDPOINT +ROUTE_PATHS.FETCH_SINGLE_PROPERTIES+"?searchId="+location.state.name) 
           .then((res)=>{
                 console.log('inside rec ', res)
             })

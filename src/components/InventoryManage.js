@@ -7,9 +7,10 @@ import Box from "@mui/material/Box";
 import { useNavigate } from "react-router-dom";
 import RecordDetail from "./RecordDetail";
 import Button from "@mui/material/Button";
-
-
 import ROUTE_PATHS from "../properties/routePaths";
+
+
+const { REACT_APP_API_ENDPOINT } = process.env
 
 export const InventoryManage = (props) => {
 
@@ -27,7 +28,7 @@ export const InventoryManage = (props) => {
   const navigate = useNavigate();
 
     useEffect(() => {
-        requestServer("post", process.env.REACT_APP_API_ENDPOINT +ROUTE_PATHS.FETCH_PROPERTIES, {}, null).then(
+        requestServer("post", REACT_APP_API_ENDPOINT +ROUTE_PATHS.FETCH_PROPERTIES, {}, null).then(
           (res) => {
             console.log("inside get records", res);
             setProperty(res.data.records);

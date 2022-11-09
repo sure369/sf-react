@@ -1,7 +1,7 @@
 {
   "name": "card",
   "version": "0.1.0",
-  "proxy": "https://sf-lx-api.vercel.app/api",
+  "proxy": "https://localhost:5600",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
