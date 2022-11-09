@@ -12,7 +12,7 @@ function NavBar() {
                     CloudDesk
                 </Typography>
                 <div >
-                   <NavLink to="/login">
+                   <NavLink to="/login-sf">
                         Login
                     </NavLink>
                     <NavLink to="/inventory">

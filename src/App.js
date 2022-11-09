@@ -22,7 +22,7 @@ function App() {
         <NavBar/>
       <Routes>
         <Route  path='/'          element ={<Home/>} />
-        <Route  path ='/login'    element ={<ExternalRedirect/>} />
+        <Route  path ='/login-sf'    element ={<ExternalRedirect/>} />
         <Route  path='/redirect'  element ={<Redirect/>}/>
         <Route  path='inventory' element ={<InventoryManage/>} >
             
