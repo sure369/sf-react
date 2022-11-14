@@ -20,6 +20,7 @@ function MuiData() {
     { id: "lx010", name: "lx-2b-10", city: "Damascus", type: "Villa",CD_Bedrooms__c:'3Br' },
     { id: "lx011", name: "test 11", city: "Doha", type: "Villa",CD_Bedrooms__c:'2' },
     { id: "lx012", name: "test 12", city: "Dubai", type: "Apartment",CD_Bedrooms__c:'2' },
+     { id: "lx013", name: "test 13", city: "Damascus", type: "Villa",CD_Bedrooms__c:'2' },
   ]);
  
   const [filterRes, setFilterRes] = useState([{}]);
