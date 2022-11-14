@@ -1,9 +1,12 @@
 import React from 'react'
 
+
 function Home() {
+ 
+
   return (
     <div>
-        Home Data Pages
+        Home Page
     </div>
   )
 }
